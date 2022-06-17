@@ -1,3 +1,5 @@
 <resources>
-    <string name="app_name">DogMVVM</string>
+    <string name="app_name">RANDOM IMAGE - A SUB BREED COLLECTION</string>
+    <string name="lbl_something_wrong">Oops!Something went wrong</string>
+    <string name="str_refresh">Refresh</string>
 </resources>
