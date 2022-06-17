@@ -2,4 +2,5 @@
     <string name="app_name">RANDOM IMAGE - A SUB BREED COLLECTION</string>
     <string name="lbl_something_wrong">Oops!Something went wrong</string>
     <string name="str_refresh">Refresh</string>
+    <string name="no_internet">No Internet</string>
 </resources>

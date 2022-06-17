@@ -1,4 +1,4 @@
-package com.dogmvvm.commons
+package com.dogmvvm.utility.common
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit

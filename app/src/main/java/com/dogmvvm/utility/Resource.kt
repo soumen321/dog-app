@@ -1,4 +1,4 @@
-package com.dogmvvm.commons
+package com.dogmvvm.utility
 
 sealed class Resource<T>(
     val data: T? = null,

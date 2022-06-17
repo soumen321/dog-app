@@ -1,4 +1,4 @@
-package com.dogmvvm.commons
+package com.dogmvvm.utility.api_service
 
 object ServiceUrl {
     //https://dog.ceo/api/breeds/image/random

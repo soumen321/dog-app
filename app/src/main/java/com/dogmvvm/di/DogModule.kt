@@ -1,6 +1,6 @@
 package com.dogmvvm.di
-import com.dogmvvm.commons.RetrofitContainer
-import com.dogmvvm.commons.ServiceUrl.BASEURL
+import com.dogmvvm.utility.common.RetrofitContainer
+import com.dogmvvm.utility.api_service.ServiceUrl.BASEURL
 import com.dogmvvm.data.remote.IDogRemoteApi
 import com.dogmvvm.data.repository.DogRepositoryImpl
 import com.dogmvvm.domain.repository.IDogRepository
@@ -13,7 +13,7 @@ import javax.inject.Singleton
 
 @Module
 @InstallIn(SingletonComponent::class)
-object NetworkModule {
+object DogModule {
 
     @Singleton
     @Provides

@@ -1,11 +1,10 @@
 package com.dogmvvm.presentation.viewmodel
 
-import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.dogmvvm.commons.Resource
+import com.dogmvvm.utility.Resource
 import com.dogmvvm.domain.model.Dog
 import com.dogmvvm.domain.usecase.UseCaseDog
 import dagger.hilt.android.lifecycle.HiltViewModel

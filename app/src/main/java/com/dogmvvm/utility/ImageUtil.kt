@@ -1,9 +1,9 @@
-package com.dogmvvm.commons
+package com.dogmvvm.utility
 
 import android.graphics.Color
 import android.graphics.drawable.GradientDrawable
 
-object Util {
+object ImageUtil {
     fun getPlaceholder(): GradientDrawable {
         val drawable = GradientDrawable()
         drawable.shape = GradientDrawable.RECTANGLE

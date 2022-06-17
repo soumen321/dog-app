@@ -1,6 +1,6 @@
 package com.dogmvvm.domain.usecase
 import com.dogmvvm.R
-import com.dogmvvm.commons.Resource
+import com.dogmvvm.utility.Resource
 import com.dogmvvm.domain.model.Dog
 import com.dogmvvm.domain.model.DogResponseFilter
 import com.dogmvvm.domain.repository.IDogRepository
@@ -11,7 +11,7 @@ class UseCaseDog @Inject constructor(
     private val repository: IDogRepository
 ) {
 
-    suspend operator fun invoke() : Resource<Dog>{
+    suspend operator fun invoke() : Resource<Dog> {
 
         try{
             val response = repository.getDog()
