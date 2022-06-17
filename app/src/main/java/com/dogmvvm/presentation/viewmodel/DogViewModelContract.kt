@@ -6,5 +6,5 @@ import com.dogmvvm.domain.model.Dog
 
 interface DogViewModelContract {
     fun onGetDogImage()
-    fun doObserveGogImage(): LiveData<Resource<Dog>>
+    fun doObserveDogImage(): LiveData<Resource<Dog>>
 }

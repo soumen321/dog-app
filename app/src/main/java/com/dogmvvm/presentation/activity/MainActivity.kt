@@ -47,7 +47,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun doObserveLoadDogImage(){
-        viewModel.doObserveGogImage().observe(this){
+        viewModel.doObserveDogImage().observe(this){
             when(it){
                 is Resource.Loading -> { setProgressState(View.VISIBLE)}
                 is Resource.Success -> {

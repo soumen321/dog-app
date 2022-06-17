@@ -30,7 +30,7 @@ class DogViewModel @Inject constructor(private val useCaseDog: UseCaseDog) : Vie
     }
 
     /* Exposed to View*/
-    override fun doObserveGogImage(): LiveData<Resource<Dog>> = dogLiveData
+    override fun doObserveDogImage(): LiveData<Resource<Dog>> = dogLiveData
 
 }
 
