@@ -14,6 +14,8 @@ import com.google.android.material.snackbar.Snackbar
 import com.squareup.picasso.Picasso
 import dagger.hilt.android.AndroidEntryPoint
 
+/* Dog App */
+
 @AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
 
