@@ -17,10 +17,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.DogMVVM"
-        tools:replace="android:icon,android:theme,android:name,android:allowBackup,android:fullBackupContent">
+        android:exported="true">
         <activity
             android:name=".presentation.activity.MainActivity"
-            android:exported="false"
+            android:exported="true"
             tools:node="merge">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
