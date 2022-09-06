@@ -19,10 +19,6 @@ jobs:
         java-version: '11'
         distribution: 'adopt'
 
-    - name: Setup NodeJS 14
-      uses: actions/setup-node@v2
-      with:
-        node-version: 14
 
 
       # clean before building signed apk
@@ -36,6 +32,12 @@ jobs:
       # upload signed apk to firebase app distribution
     - name: build debug
       run: ./gradlew assembleDebug
+
+    - name: Setup NodeJS 14
+      uses: actions/setup-node@v2
+      with:
+        node-version: 14
+
 
     - name: upload artifact to Firebase App Distribution
       uses: wzieba/Firebase-Distribution-Github-Action@v1.3.2
