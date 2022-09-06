@@ -20,12 +20,12 @@ jobs:
         distribution: 'adopt'
         cache: gradle
 
-    – name: Setup NodeJS 14
+    - name: Setup NodeJS 14
       uses: actions/setup-node@v2
       with:
         node-version: 14
 
-    – name: Install yarn
+    - name: Install yarn
       run: npm install -g yarn
 
       # clean before building signed apk
