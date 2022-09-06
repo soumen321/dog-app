@@ -20,6 +20,10 @@ jobs:
         distribution: 'adopt'
         cache: gradle
 
+      # Update Node JS to install the most recent npm update
+    - name: Update Node Version
+      run: sudo npm install npm@latest -g
+
       # clean before building signed apk
     - name: DogApp Build Clean Up
       run: ./gradlew clean --stacktrace
