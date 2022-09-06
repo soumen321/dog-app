@@ -24,9 +24,9 @@ jobs:
     - name: DogApp Build Clean Up
       run: ./gradlew clean --stacktrace
 
-        # assemble signed apk
-     - name: Assemble DogApp Debug Build
-       run: ./gradlew clean assembleDebug --stacktrace
+      # assemble signed apk
+    - name: Assemble DogApp Debug Build
+      run: ./gradlew clean assembleDebug --stacktrace
 
 
 
