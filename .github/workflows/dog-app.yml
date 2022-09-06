@@ -44,7 +44,7 @@ jobs:
         appId: ${{secrets.FIREBASE_APP_ID}}
         token: ${{secrets.FIREBASE_TOKEN}}
         groups: QA
-        file: app/intermediates/apk/debug/app-debug.apk
+        file: app/build/outputs/apk/debug/app-debug.apk
         debug: true
 
 
