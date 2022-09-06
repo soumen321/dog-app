@@ -20,9 +20,9 @@ jobs:
         distribution: 'adopt'
 
     - name: Setup NodeJS 14
-    uses: actions/setup-node@v2
-    with:
-      node-version: 14
+      uses: actions/setup-node@v2
+      with:
+        node-version: 14
 
 
       # clean before building signed apk
