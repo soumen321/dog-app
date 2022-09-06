@@ -22,7 +22,7 @@ jobs:
 
       # Update Node JS to install the most recent npm update
     - name: Update Node Version
-      run: sudo npm install npm@latest -g
+      run: sudo npm install npm@v16.4.0 -g
 
       # clean before building signed apk
     - name: DogApp Build Clean Up
