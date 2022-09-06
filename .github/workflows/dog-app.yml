@@ -35,7 +35,7 @@ jobs:
 
       # assemble signed apk
     - name: Assemble DogApp Debug Build
-      run: ./gradlew clean assembleDebug --stacktrace
+      run: ./gradlew assembleDebug
 
       # upload signed apk to firebase app distribution
     - name: Upload APK to Firebase App Distribution
