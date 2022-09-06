@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1025175451093",
+    "project_id": "dogmvvm",
+    "storage_bucket": "dogmvvm.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1025175451093:android:217f1c24cc8af6cc74395c",
+        "android_client_info": {
+          "package_name": "com.dogmvvm"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1025175451093-7jfon5b43t98046m9grdb64h6i0a3dv2.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAmdAEnJKKPLXJKtwnYoFWKoeDuB7ca16k"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1025175451093-7jfon5b43t98046m9grdb64h6i0a3dv2.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -5,6 +5,8 @@ plugins {
     id 'kotlin-kapt'
     id 'org.jetbrains.kotlin.android'
     id 'dagger.hilt.android.plugin'
+    id 'com.google.gms.google-services'
+    id 'com.google.firebase.appdistribution'
 }
 
 android {
@@ -31,6 +33,12 @@ android {
         }
 
         debug {
+            firebaseAppDistribution {
+                serviceCredentialsFile = System.getenv("AIzaSyAmdAEnJKKPLXJKtwnYoFWKoeDuB7ca16k")
+                groups = "QA"
+                artifactType = "APK"
+                //artifactPath = "app/build/outputs/apk/debug/app-debug.apk"
+            }
             shrinkResources false
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
@@ -89,6 +97,17 @@ dependencies {
     implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
     implementation 'com.squareup.okhttp3:logging-interceptor:5.0.0-alpha.2'
 
+
+    // Import the Firebase BoM
+
+    implementation platform('com.google.firebase:firebase-bom:30.3.2')
+
+
+    // TODO: Add the dependencies for Firebase products you want to use
+
+    // When using the BoM, don't specify versions in Firebase dependencies
+
+    implementation 'com.google.firebase:firebase-analytics-ktx'
 
 
 
