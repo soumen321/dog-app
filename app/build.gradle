@@ -33,16 +33,26 @@ android {
         }
 
         debug {
-            firebaseAppDistribution {
-                serviceCredentialsFile = System.getenv("AIzaSyAmdAEnJKKPLXJKtwnYoFWKoeDuB7ca16k")
-                groups = "QA"
-                artifactType = "APK"
-                //artifactPath = "app/build/outputs/apk/debug/app-debug.apk"
-            }
             shrinkResources false
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
             debuggable true
+        }
+
+        applicationVariants.all { variant ->
+
+            variant.outputs.all { output ->
+
+                if (variant.buildType.name == "release") {
+                    //Output file name : e.g.ss-release-4-0-2-106-prod-v4
+                    def apkFileName = "app-release.apk"
+                    output.outputFileName = apkFileName
+                } else {
+                    //Output file name : e.g.ss-debug-4-0-2-106-bleeding-edge-dist-v1.apk
+                    def apkFileName = "app-debug.apk"
+                    output.outputFileName = apkFileName
+                }
+            }
         }
     }
     compileOptions {
