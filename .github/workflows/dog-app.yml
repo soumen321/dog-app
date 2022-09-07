@@ -15,7 +15,7 @@ jobs:
           java-version: '11'
           distribution: 'adopt'
       - name: build debug
-        run: ./gradlew assembleDevDebug
+        run: ./gradlew assembleDebug
       - name: upload artifact to Firebase App Distribution
         uses: wzieba/Firebase-Distribution-Github-Action@v1.3.4
         with:
