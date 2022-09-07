@@ -20,34 +20,12 @@ jobs:
         distribution: 'adopt'
         cache: gradle
 
-    - name: Setup NodeJS 16
-      uses: actions/setup-node@v2
-      with:
-        node-version: 16
-        debug: true
-
-    - name: Install yarn
-      run: npm install -g yarn
-
-      # clean before building signed apk
-    - name: DogApp Build Clean Up
-      run: ./gradlew clean --stacktrace
-
-      # assemble signed apk
-    - name: Assemble DogApp Debug Build
-      run: ./gradlew assembleDebug
-
-    - name: Grant execute permission for gradlew
-      run: chmod +x gradlew
-    - name: Build with Gradle
-      run: ./gradlew build
-
-      # upload signed apk to firebase app distribution
-    - name: Upload APK to Firebase App Distribution
-      uses: wzieba/Firebase-Distribution-Github-Action@v1.3.4
-      with:
-        appId: ${{secrets.FIREBASE_APP_ID}}
-        token: ${{secrets.FIREBASE_TOKEN}}
-        groups: QA
-        file: app/build/outputs/apk/debug/app-debug.apk
-        debug: true
+     - name: Grant execute permission for gradlew
+       run: chmod +x ./gradlew
+     - name: Build with Gradle
+       run: ./gradlew build
+     - name: Upload APK
+       uses: actions/upload-artifact@v2.2.3
+       with:
+         name: app
+         path: ./app/build/outputs/apk/debug/app-debug.apk
