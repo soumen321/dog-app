@@ -37,6 +37,17 @@ jobs:
     - name: Assemble DogApp Debug Build
       run: ./gradlew assembleDebug
 
+    - name: Grant execute permission for gradlew
+      run: chmod +x gradlew
+    - name: Build with Gradle
+      run: ./gradlew build
+
+    - name: Upload APK
+        uses: actions/upload-artifact@v2.2.3
+        with:
+          name: app
+          path: ./app/build/outputs/apk/debug/app-debug.apk
+
       # upload signed apk to firebase app distribution
     - name: Upload APK to Firebase App Distribution
       uses: wzieba/Firebase-Distribution-Github-Action@v1.3.4
@@ -46,4 +57,3 @@ jobs:
         groups: QA
         file: app/build/outputs/apk/debug/app-debug.apk
         debug: true
-
