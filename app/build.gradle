@@ -9,6 +9,15 @@ plugins {
     id 'com.google.firebase.appdistribution'
 }
 
+/*signing config*/
+def keystorePropertiesFile = rootProject.file("dev_config/keystore.properties")
+def keystoreProperties = new Properties()
+keystoreProperties.load(new FileInputStream(keystorePropertiesFile))
+
+def getKeyStoreFile() {
+    "${project.rootDir.absolutePath}" + "/dev_config/dogapp.jks"
+}
+
 android {
     compileSdkVersion 31
 
@@ -24,6 +33,23 @@ android {
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
+    signingConfigs {
+
+        release {
+            storeFile file(getKeyStoreFile())
+            storePassword keystoreProperties['storePassword']
+            keyAlias keystoreProperties['keyAlias']
+            keyPassword keystoreProperties['keyPassword']
+        }
+
+        debug {
+            storeFile file(getKeyStoreFile())
+            storePassword keystoreProperties['storePassword']
+            keyAlias keystoreProperties['keyAlias']
+            keyPassword keystoreProperties['keyPassword']
+        }
+    }
+
     buildTypes {
         release {
             shrinkResources true
@@ -33,10 +59,9 @@ android {
         }
 
         debug {
-            shrinkResources false
-            minifyEnabled false
-            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
-            debuggable true
+            firebaseAppDistribution{
+                groups = "QA"
+            }
         }
 
         applicationVariants.all { variant ->
@@ -49,7 +74,7 @@ android {
                     output.outputFileName = apkFileName
                 } else {
                     //Output file name : e.g.ss-debug-4-0-2-106-bleeding-edge-dist-v1.apk
-                    def apkFileName = "app-debug2.apk"
+                    def apkFileName = "app-debug.apk"
                     output.outputFileName = apkFileName
                 }
             }
