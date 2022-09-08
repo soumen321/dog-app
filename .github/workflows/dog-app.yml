@@ -21,6 +21,24 @@ jobs:
         with:
           java-version: '11'
           distribution: 'adopt'
+            # load keystore properties to ci pipe-line
+            - name: Decrypt And Load Dog App KeyStore Properties File
+              env:
+                KEYSTORE_PROPERTIES: ${{secrets.KEYSTORE_PROPERTIES}}
+              run: |
+                openssl aes-256-cbc -d -in dev_config/keystore.properties.encrypted -k $KEYSTORE_PROPERTIES -md md5 >> dev_config/keystore.properties
+
+            # load keystore file to ci pipe-line
+            - name: Decrypt And Load Dog App KeyStore File
+              env:
+                ENCRYPT_SECRET_KEY: ${{secrets.ENCRYPT_SECRET_KEY}}
+              run: |
+                openssl aes-256-cbc -d -in dev_config/dogapp.jks.encrypted -k $ENCRYPT_SECRET_KEY -md md5 >> dev_config/dogapp.jks
+
+            # clean before building signed apk
+            - name: Dog Build Clean Up
+              run: ./gradlew clean --stacktrace
+
       - name: build release
         run: bash ./gradlew assembleDebug
       - name: upload artifact to Firebase App Distribution
@@ -29,7 +47,8 @@ jobs:
           appId: '1:1025175451093:android:217f1c24cc8af6cc74395c'
           token: '1//0grhZZ4hf_MJfCgYIARAAGBASNwF-L9Irh4MuDCrHihAR1cFrMTbbMyiKL3J8B3PRB9X0OAD0Pn7As8NMUsIdelv6G9VzjY-MJDM'
           groups: QA
-          file: ./app/debug/app-debug12.apk
+          file: app/build/outputs/apk/debug/app-debug12.apk
+          debug: true
 
   apk:
     name: Generate APK
@@ -48,4 +67,4 @@ jobs:
         uses: actions/upload-artifact@v2.2.3
         with:
           name: app
-          path: ./app/debug/app-debug12.apk
+          path: app/build/outputs/apk/debug/app-debug12.apk
