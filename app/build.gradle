@@ -59,9 +59,6 @@ android {
         }
 
         debug {
-            firebaseAppDistribution{
-                groups = "QA"
-            }
             shrinkResources false
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
