@@ -32,7 +32,7 @@ jobs:
         env:
           ENCRYPT_SECRET_KEY: ${{secrets.ENCRYPT_SECRET_KEY}}
         run: |
-          openssl aes-256-cbc -d -in dev_config/dogapp.jks.encrypted -k $ENCRYPT_SECRET_KEY -md md5 >> dev_config/dogapp.jks
+          openssl aes-256-cbc -d -in dev_config/dogapp.jks.encrypted -k $ENCRYPT_SECRET_KEY >> dev_config/dogapp.jks
 
       # clean before building signed apk
       - name: Dog Build Clean Up
