@@ -42,7 +42,7 @@ jobs:
           appId: '1:1025175451093:android:217f1c24cc8af6cc74395c'
           token: '1//0grhZZ4hf_MJfCgYIARAAGBASNwF-L9Irh4MuDCrHihAR1cFrMTbbMyiKL3J8B3PRB9X0OAD0Pn7As8NMUsIdelv6G9VzjY-MJDM'
           groups: QA
-          file: app/build/outputs/apk/debug/app-debug.apk
+          file: app/build/intermediate/apk/debug/app-debug12.apk
 
   apk:
     name: Generate APK
