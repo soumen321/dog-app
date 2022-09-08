@@ -43,7 +43,6 @@ plugins {
 
 
 allprojects {
-    buildDir = "${rootProject.rootDir}/build/${project.name}"
 
     repositories {
 
