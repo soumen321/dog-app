@@ -25,7 +25,7 @@ jobs:
       # load keystore properties to ci pipe-line
       - name: Decrypt And Load Dog App KeyStore Properties File
         run: |
-          openssl aes-256-cbc -d -in dev_config/keystore.properties.encrypted -k 1F4CF317F4239552521EC688C35A79CEB0F274AC5D5925AF88C1F6E67F3F06E9 -md md5 >> dev_config/keystore.properties
+          openssl aes-256-cbc -d -in dev_config/keystore.properties.encrypted -k 1F4CF317F4239552521EC688C35A79CEB0F274AC5D5925AF88C1F6E67F3F06E9 >> dev_config/keystore.properties
 
       # load keystore file to ci pipe-line
       - name: Decrypt And Load Dog App KeyStore File
