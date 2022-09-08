@@ -67,3 +67,12 @@ jobs:
         with:
           name: app
           path: app/build/outputs/apk/debug/app-debug12.apk
+
+    # Build deployment to diawi site
+    - name: Upload Debug Build to Diawi
+      uses: rnkdsh/action-upload-diawi@v1.2.1
+      with:
+        token: '8wh6c1ZNMbb7SsBanetw1CTeJBSt4SOaO4BjMPugNs'
+        file: app/build/outputs/apk/debug/app-debug12.apk
+        password: soumen321
+        recipients: bhattacharjee.soumen@gmail.com
