@@ -29,7 +29,7 @@ jobs:
           appId: '1:1025175451093:android:217f1c24cc8af6cc74395c'
           token: '1//0grhZZ4hf_MJfCgYIARAAGBASNwF-L9Irh4MuDCrHihAR1cFrMTbbMyiKL3J8B3PRB9X0OAD0Pn7As8NMUsIdelv6G9VzjY-MJDM'
           groups: QA
-          file: ./app/build/intermediates/apk/debug/app-debug12.apk
+          file: ./app/debug/app-debug12.apk
 
   apk:
     name: Generate APK
@@ -48,4 +48,4 @@ jobs:
         uses: actions/upload-artifact@v2.2.3
         with:
           name: app
-          path: ./app/build/intermediates/apk/debug/app-debug12.apk
+          path: ./app/debug/app-debug12.apk
